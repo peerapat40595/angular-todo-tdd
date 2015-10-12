@@ -83,7 +83,22 @@
         subject.removeItem(1);
         expect(subject.itemList).toEqual(['hello', 'world']);
 
-      });
+      })
     });
+
+    describe("Count Item", function () {
+       beforeEach(function() {
+        this.item1 = new TodoItem('1', true);
+        this.item2 = new TodoItem('2', false);
+        this.item3 = new TodoItem('3', true);
+
+        subject.itemList = [this.item1, this.item2, this.item3];
+      });
+
+      it('Count Not Done items', function () {
+        expect(subject.displayCountNotDoneItems()).toEqual(1);
+      })
+    });
+
   });
 })();

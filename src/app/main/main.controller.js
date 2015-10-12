@@ -13,6 +13,10 @@
       return _.filter(this.itemList, this.filterType);
     };
 
+    this.displayCountNotDoneItems = function() {
+      return _.filter(this.itemList, this.onlyNotDone).length;
+    };
+
     this.addItem = function (text) {
 
       var todoItem = new TodoItem(text);
