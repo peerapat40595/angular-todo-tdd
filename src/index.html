@@ -57,9 +57,11 @@
             <input type="radio" name="filter-type" data-ng-model="todoList.filterType" ng-value="todoList.onlyNotDone"> ยังไม่ได้ทำ
           </label>
         </div>
-      </div>
-      <div ng-model="todoList.displayCountNotDoneItems()">
-        Count Not done Items : {{ todoList.displayCountNotDoneItems() }}
+        <div>
+          <hr>
+          จำนวนงานที่ยังไม่ได้ทำ : {{ todoList.displayCountNotDoneItems() }} 
+          <button ng-click="todoList.clearComplete()" class="btn btn-info btn-xs pull-right">ลบที่เสร็จแล้วทั้งหมด</button>
+        </div>
       </div>
     </div>
   </div>

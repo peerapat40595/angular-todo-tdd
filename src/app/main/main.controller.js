@@ -17,6 +17,10 @@
       return _.filter(this.itemList, this.onlyNotDone).length;
     };
 
+    this.clearComplete = function(){
+       this.itemList = _.filter(this.itemList, this.onlyNotDone);
+    }
+
     this.addItem = function (text) {
 
       var todoItem = new TodoItem(text);

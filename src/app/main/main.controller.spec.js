@@ -100,5 +100,22 @@
       })
     });
 
+    describe("clearCompleteTask", function () {
+
+      beforeEach(function() {
+        this.item1 = new TodoItem('1', true);
+        this.item2 = new TodoItem('2', true);
+        this.item3 = new TodoItem('3', false);
+        this.item4 = new TodoItem('4', true);
+        subject.itemList = [this.item1, this.item2, this.item3,this.item4];
+      });
+
+      it('return only not done', function () {
+        subject.clearComplete();
+        expect(subject.itemList).toEqual([this.item3]);
+      });
+
+    });
+
   });
 })();
